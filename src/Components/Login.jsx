@@ -1,6 +1,6 @@
 
-import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
-
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useContext, useState } from 'react';
@@ -24,8 +24,9 @@ const Login = () => {
         SignIn(email, password)
         .then(result =>{
             console.log(result.user)
-            navigate(location?.state ? location.state : '/')
+        
             toast('login successful')
+            navigate(location?.state ? location.state : '/')
             
         })
         .catch(error=>{
@@ -39,8 +40,10 @@ const Login = () => {
 
         googleSignIn(provider)
         .then(Result=>{
+
            console.log(Result._tokenResponse.email)
             toast('sign in with google successful')
+            navigate(location?.state ? location.state : '/')
             
            
             
@@ -52,6 +55,9 @@ const Login = () => {
     }
     return (
         <div>
+            <Helmet>
+          <title>Carrier-Hub| login</title>
+        </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
 
@@ -78,7 +84,7 @@ const Login = () => {
                         {
                             erMessage&& <p  className='text-red-500 ml-3'>{erMessage}</p>
                         }
-                            <button onClick={handleGSignIn} className="btn btn-outline btn-success mx-auto w-1/2" >Google SignIn </button>
+                            <button onClick={handleGSignIn} className="btn btn-outline btn-success mx-auto rounded-full  " ><img className='w-8 rounded-full' src="https://i.ibb.co/DkW07NG/google-logo-icon-134448.png" alt="" /></button>
                         <p className='ml-3 mb-3'>Do not have account? <Link  className='text-sky-600' to={'/Register'}>...Register</Link></p>
                     </div>
                 </div>

@@ -1,15 +1,31 @@
 
 import { NavLink } from 'react-router-dom';
 import '../App.css'
+import { useContext } from 'react';
+import { AuthContext } from './AuthProvider';
 
 const Navbar = () => {
+    const {user, LogOut} = useContext(AuthContext)
     const links = <>
         <li className="mr-2"><NavLink to={'/'}  >Home</NavLink></li>
-        <li><NavLink to={'/AddProduct'}>Add New Product</NavLink></li>
-        <li><NavLink to={'/MyCart'}>My Cart</NavLink></li>
+        <li><NavLink to={'/AllJob'}>All job</NavLink></li>
+        {
+            user ? <>
+            <li ><NavLink to={'/AddJob'}  >Add job</NavLink></li>
+            <li><NavLink to={'/MyJob'}>My job</NavLink></li>
+            <li><NavLink to={'/Applied'}>Applied jobs</NavLink></li>
+            </> : ''
+        }
+        <li><NavLink to={'/Blog'}>Blog</NavLink></li>
 
     </>
-    const user = '';
+    
+    const handleSignOut = () => {
+        LogOut()
+            .then()
+            .catch()
+
+    }
     return (
         <div className="navbar bg-base-100 mb-8  shadow-xl">
         <div className="navbar-start">
@@ -20,7 +36,7 @@ const Navbar = () => {
                 <ul tabIndex={0} className="mb-1 dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                     {
                         user ? <div className="flex items-center gap-2 mb-3">
-                            <img className="rounded-full w-10" src={user.photoURL} alt="" />
+                            <img className="rounded-full w-12" src={user.photoURL} alt="" />
                             <p className="font-medium text-rose-500">{user.displayName}</p>
                         </div>
                             :
@@ -67,7 +83,7 @@ const Navbar = () => {
         <div className="navbar-end">
             {
                 user ? <div className="lg:flex hidden items-center gap-2">
-                    <img className="rounded-full w-10" src={user.photoURL} alt="" />
+                    <img className="rounded-full w-12" src={user.photoURL} alt="" />
                     <p>{user.displayName}</p>
                     <button onClick={handleSignOut} className="btn btn-outline btn-primary ">SignOut</button>
                 </div>

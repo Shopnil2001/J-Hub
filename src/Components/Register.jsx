@@ -6,6 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
 import { AuthContext } from './AuthProvider';
+import { Helmet } from 'react-helmet';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const [erMessage, setErMessage] = useState('')
@@ -37,19 +39,14 @@ const Register = () => {
 
         CreateUser(email, password,name,PhotoUrl)
             .then(result => {
-                const user = result.user
-                return user.updateProfile({
+                
+                updateProfile(result.user,{
                     displayName: name,
                     photoURL: PhotoUrl
                   });
                 })
-                .then(() => {
-                  
-                  
-                toast('Registration successful. Go to home  ')
-
+                toast('Registration successful. Go to home/ please reload if user name and photo is not visible  ')
                 
-            })
             .catch(error => {
                 const errorMessage = error.message;
                 setErMessage(errorMessage);
@@ -60,6 +57,9 @@ const Register = () => {
     }
     return (
         <div>
+             <Helmet>
+                <title>Carrier-Hub|Register</title>
+            </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
 
@@ -75,7 +75,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">PhotoUrl</span>
                                 </label>
-                                <input type="text" placeholder="name" name='PhotoUrl' className="input input-bordered" required />
+                                <input type="text" placeholder="PhotURL" name='PhotoUrl' className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
