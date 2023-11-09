@@ -1,0 +1,58 @@
+[
+    {
+        "pictureUrl": "https://example.com/job1-banner.jpg",
+        "jobTitle": "Senior Software Engineer",
+        "loggedInUserEmail": "wdshopnil2001@gmail.com",
+        "jobCategory": "On Site",
+        "salaryRange": "$80,000 - $100,000",
+        "jobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "jobPostingDate": "2023-10-20",
+        "applicationDeadline": "2023-11-10",
+        "jobApplicantsNumber": 0
+      },
+      {
+        "pictureUrl": "https://example.com/job1-banner.jpg",
+        "jobTitle": "Web Developer",
+        "loggedInUserEmail": "wdshopnil2001@gmail.com",
+        "jobCategory": "Remote",
+        "salaryRange": "$80,000 - $100,000",
+        "jobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "jobPostingDate": "2023-10-20",
+        "applicationDeadline": "2023-11-10",
+        "jobApplicantsNumber": 0
+      },
+      {
+        "pictureUrl": "https://example.com/job1-banner.jpg",
+        "jobTitle": "Data Entry",
+        "loggedInUserEmail": "wdshopnil2001@gmail.com",
+        "jobCategory": "On Site",
+        "salaryRange": "$80,000 - $100,000",
+        "jobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "jobPostingDate": "2023-10-20",
+        "applicationDeadline": "2023-11-10",
+        "jobApplicantsNumber": 0
+      },
+      {
+        "pictureUrl": "https://example.com/job1-banner.jpg",
+        "jobTitle": "Senior Web Developer",
+        "loggedInUserEmail": "shopnilabdullah2001@gmail.com",
+        "jobCategory": "On Site",
+        "salaryRange": "$80,000 - $100,000",
+        "jobDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "jobPostingDate": "2023-10-20",
+        "applicationDeadline": "2023-11-10",
+        "jobApplicantsNumber": 0
+      },
+      {
+        "pictureUrl": "https://example.com/job3-banner.jpg",
+        "jobTitle": "Graphic Designer",
+        "loggedInUserEmail": "shopnilabdullah2001@gmail.com",
+        "jobCategory": "Part-Time",
+        "salaryRange": "$30,000 - $40,000",
+        "jobDescription": "Praesent tincidunt, ex ac finibus malesuada.",
+        "jobPostingDate": "2023-10-22",
+        "applicationDeadline": "2023-11-08",
+        "jobApplicantsNumber": 0
+      }
+
+]

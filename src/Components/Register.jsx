@@ -40,12 +40,12 @@ const Register = () => {
         CreateUser(email, password,name,PhotoUrl)
             .then(result => {
                 
-                updateProfile(result.user,{
+                updateProfile(result.user, {
                     displayName: name,
                     photoURL: PhotoUrl
-                  });
                 })
-                toast('Registration successful. Go to home/ please reload if user name and photo is not visible  ')
+                })
+                // toast('Registration successful. Go to home/ please reload if user name and photo is not visible  ')
                 
             .catch(error => {
                 const errorMessage = error.message;
