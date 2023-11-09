@@ -20,7 +20,7 @@ const MyJobs = () => {
     return (
         <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3'>
             <Helmet>
-                <title>Carrier-Hub|MyJob</title>
+                <title>J-Hub|MyJob</title>
             </Helmet>
             {
                 MyJobs?.map(job=><div  
