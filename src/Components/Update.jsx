@@ -1,4 +1,5 @@
 
+import { Helmet } from 'react-helmet';
 import { useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -45,6 +46,7 @@ const Update = () => {
     }
     return (
         <div className='w-4/6 mx-auto h-2/3 border border-stone-950 rounded-xl mt-5'>
+            <Helmet><title>J-Hub|Update</title></Helmet>
             <h1 className='mb-3 text-center font-bold'>Update Product</h1>
             <hr className='mb-3 w-1/2 mx-auto'/>
             <form onSubmit={handleUpdateJob} className='md:w-2/3 lg:w-1/2 w-full mx-auto  rounded-xl px-5 py-3' >
