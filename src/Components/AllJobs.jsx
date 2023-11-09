@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllJobs = () => {
@@ -21,6 +22,9 @@ const AllJobs = () => {
 
     return (
         <>
+        <Helmet>
+                <title>J-Hub|AllJobs</title>
+            </Helmet>
             <form onSubmit={handleSearch} className='flex' >
                 <div className="join mx-auto my-10">
                     <div>

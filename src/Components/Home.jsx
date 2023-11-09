@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Carrier-Hub|Home</title>
+                <title>J-Hub|Home</title>
             </Helmet>
             <Banner></Banner>
             <div className='w-2/3 mx-auto'>

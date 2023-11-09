@@ -58,7 +58,7 @@ const Register = () => {
     return (
         <div>
              <Helmet>
-                <title>Carrier-Hub|Register</title>
+                <title>J-Hub|Register</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">

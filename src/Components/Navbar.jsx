@@ -59,7 +59,7 @@ const Navbar = () => {
             <div className=" px-2 mx-2 hidden lg:block md:block   ">
                         <div className='flex items-center '>
                         <img className='w-14 h-14 mr-4 rounded-full' src="https://i.ibb.co/rmFj2rX/360-F-513722905-Sgxi-Gdj-QZsdv-P4-ODm-ERs-QGg-W2b-Uwj1l-T.jpg" alt="" />
-                        <h1 className='text-xl font-bold text-cyan-700'>Carrier-Hub</h1>
+                        <h1 className='text-xl font-bold text-cyan-700'>J-Hub</h1>
                         </div>
                     </div>
             
@@ -77,7 +77,7 @@ const Navbar = () => {
         <div className=" px-2 mx-2  lg:hidden md:hidden  ">
                         <div className='flex items-center '>
                         <img className='w-14 h-14 mr-4 rounded-full' src="https://i.ibb.co/rmFj2rX/360-F-513722905-Sgxi-Gdj-QZsdv-P4-ODm-ERs-QGg-W2b-Uwj1l-T.jpg" alt="" />
-                        <h1 className='text-xl font-bold text-cyan-700'>Carrier-Hub</h1>
+                        <h1 className='text-xl font-bold text-cyan-700'>J-Hub</h1>
                         </div>
                     </div>
         <div className="navbar-end">
