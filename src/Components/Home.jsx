@@ -20,7 +20,8 @@ const Home = () => {
                 <title>J-Hub|Home</title>
             </Helmet>
             <Banner></Banner>
-            <div className='w-2/3 mx-auto'>
+            <div className='w-2/3 mx-auto mt-20'>
+                <h1>Jobs you may want to check:</h1>
             <Tabs selectedIndex={tabIndex}  onSelect={(index) => {setTabIndex(index);
              if(index===0){
                 setCategory('')
