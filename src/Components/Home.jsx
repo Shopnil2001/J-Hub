@@ -21,7 +21,7 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <div className='w-2/3 mx-auto mt-20'>
-                <h1>Jobs you may want to check:</h1>
+                <h1 className='text-center font-bold text-2xl mb-10 border-b-slate-950 border-b'>Jobs you may want to check:</h1>
             <Tabs selectedIndex={tabIndex}  onSelect={(index) => {setTabIndex(index);
              if(index===0){
                 setCategory('')

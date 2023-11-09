@@ -80,7 +80,7 @@ const JobDetails = () => {
     return (
         <div className='w-4/5 mx-auto border-stone-700'>
             <Helmet>
-                <title>Carrier-Hub|JobDetails</title>
+                <title>J-Hub|JobDetails</title>
             </Helmet>
             <div className='text-center mx-auto mb-5'>
                 <img className='mx-auto' src={job.pictureUrl} alt="" />
@@ -103,7 +103,7 @@ const JobDetails = () => {
                     Deadline : {job.applicationDeadline}
                 </p>
                 <p className='text-lg font-medium text-left '>Applicants:{job.jobApplicantsNumber}</p>
-                <p className='text-lg font-medium text-left mb-5 '>
+                <p className='text-lg font-medium text-left mb-5 w-full '>
                     Posted by : {job.loggedInUserEmail}
                 </p>
 
