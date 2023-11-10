@@ -21,7 +21,7 @@ const MyJobs = () => {
     const handleDelete= _id =>{
         Swal.fire({
             title: "Are you sure?",
-            text: "You won't be able to revert this!",
+            text: "this post will be permanently deleted!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
@@ -38,7 +38,7 @@ const MyJobs = () => {
                 if(data.deletedCount>0){
                     Swal.fire({
                         title: "Deleted!",
-                        text: "Your file has been deleted.",
+                        text: "Your Job post has been deleted.",
                         icon: "success"
                       });
                       const updated = MyJobs.filter(job=>job._id!=_id)
