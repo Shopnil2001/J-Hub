@@ -22,7 +22,7 @@ const TabCards = (category) => {
                 Jobs?.map(job=><div  
                     data-aos="fade-right"
                     data-aos-offset="300"
-                    data-aos-easing="ease-in-sine" key={job._id} className='card w-96 glass mx-auto '>
+                    data-aos-easing="ease-in-sine" key={job._id} className='card w-5/6  glass mx-auto '>
                     <figure><img className='w-full' src={job.pictureUrl} alt="car!" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">Model:{job.jobTitle}</h2>
