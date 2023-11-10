@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './AuthProvider';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import Swal from 'sweetalert2';
 
 const MyJobs = () => {
     const {user} = useContext(AuthContext)
@@ -15,8 +16,42 @@ const MyJobs = () => {
         })
     },[user?.email])
     if(MyJobs.length<1){
-        return <div className='text-center'><h1>No job Posted yet</h1></div>
+        return <div className='text-center text-2xl font-bold text-red-500'><h1>No job Posted yet</h1></div>
     }
+    const handleDelete= _id =>{
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+            
+            fetch(`http://localhost:5000/jobs/${_id}`,{
+                method: 'DELETE'
+            })
+            .then(res=> res.json())
+            .then(data => {
+                if(data.deletedCount>0){
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                      });
+                      const updated = MyJobs.filter(job=>job._id!=_id)
+                      setMyJobs(updated);
+
+                }
+            })
+            
+
+            }
+          });
+    }
+
     return (
         <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3'>
             <Helmet>
@@ -36,7 +71,7 @@ const MyJobs = () => {
                         
 
                         <div className="card-actions justify-end">
-                           <button className="btn ">Delete</button>
+                           <button onClick={()=>handleDelete(job._id)} className="btn ">Delete</button>
                             <Link to={`/Update/${job._id}`}><button className="btn btn-error">Update</button></Link>
                         </div>
                     </div>
