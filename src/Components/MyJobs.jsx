@@ -36,7 +36,7 @@ const MyJobs = () => {
                         
 
                         <div className="card-actions justify-end">
-                            <Link to={`/JobDetails/${job._id}`}><button className="btn ">Details</button></Link>
+                           <button className="btn ">Delete</button>
                             <Link to={`/Update/${job._id}`}><button className="btn btn-error">Update</button></Link>
                         </div>
                     </div>
