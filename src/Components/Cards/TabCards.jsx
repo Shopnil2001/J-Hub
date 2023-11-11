@@ -24,6 +24,7 @@ const TabCards = (category) => {
                         <h2 className="card-title">Model:{job.jobTitle}</h2>
                         <p>Category:{job.jobCategory}</p>
                         <p>Application Deadline:{job.applicationDeadline}</p>
+                        <p>Posted-by:{job.loggedInUser}</p>
                         <p>Applicants:{job.jobApplicantsNumber}</p>
                         
 

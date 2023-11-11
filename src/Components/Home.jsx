@@ -71,37 +71,125 @@ const Home = () => {
                         <TabCards category={category}></TabCards>
                     </TabPanel>
                 </Tabs>
+                <div className='my-20'>
+                    <h1 className='text-center text-2xl font-bold '>
+                        User Review
+                    </h1>
+                    <hr className='w-1/2 border-b border-b-gray-950 mx-auto '/>
+                <div className='lg:flex mt-5 justify-around'>
+            <div className="card w-60 bg-base-100 shadow-xl mx-auto">
+                <figure className="px-10 pt-10 w-40 mx-auto">
+                    <img src={'https://i.ibb.co/h1SkYqB/member1.png'} alt="Shoes" className="rounded-xl" />
+                </figure>
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title">Matt</h2>
+                    <p>Finding employee is easier now</p>
+                    <div className="card-actions">
+                        <div className="rating rating-sm">
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="card w-60 bg-base-100 shadow-xl mx-auto">
+                <figure className="px-10 pt-10 w-40 mx-auto">
+                    <img src={'https://i.ibb.co/12ZKQXS/member2.png'} alt="Shoes" className="rounded-xl" />
+                </figure>
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title">Jenny</h2>
+                    <p>this is one of the easiest platform to use </p>
+                    <div className="card-actions">
+                        <div className="rating rating-sm">
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="card w-60 bg-base-100 shadow-xl mx-auto">
+                <figure className="px-10 pt-10 w-40 mx-auto">
+                    <img src={'https://i.ibb.co/vd679Xr/member3.png'} alt="Shoes" className="rounded-xl" />
+                </figure>
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title">Joshim</h2>
+                    <p> My career journey started here </p>
+                    <div className="card-actions">
+                        <div className="rating rating-sm">
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400"  />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400"checked />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="card w-60 bg-base-100 shadow-xl mx-auto">
+                <figure className="px-10 pt-10 w-40 mx-auto">
+                    <img src={'https://i.ibb.co/YcJqKkk/member4.png'} alt="Shoes" className="rounded-xl" />
+                </figure>
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title">Jorina</h2>
+                    <p> Still got no job </p>
+                    <div className="card-actions">
+                        <div className="rating rating-sm">
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                </div>
+
+
                 <h1 className='text-center text-2xl font-bold my-10'>Company That uses our service:</h1>
                 <div className="flex justify-center items-center">
                     
-                    <div className="grid grid-cols-3 gap-4 max-w-screen-lg">
+                    <div className="grid grid-cols-3  lg:gap-16 md:gap-16 gap-6 text-lg font-semibold ">
                         <div className="flex flex-col items-center">
                             {/* <img src="company1-logo.png" alt="Company 1" class="w-20 h-20"> */}
+                               <img className='w-40 h-40' src="https://i.ibb.co/DkW07NG/google-logo-icon-134448.png" alt="" />
                                 <h3 className="mt-2 text-center text-gray-800">Google</h3>
                         </div>
 
                         <div className="flex flex-col items-center">
                             {/* <img src="company2-logo.png" alt="Company 2" class="w-20 h-20"> */}
+                            <img className='w-40 h-40' src="https://i.ibb.co/Gs5wXv8/8867-Microsoft-5-F00-Logo-2-D00-for-2-D00-screen.jpg" alt="" />
                                 <h3 className="mt-2 text-center text-gray-800">Microsoft</h3>
                         </div>
 
                         <div className="flex flex-col items-center">
                             {/* <img src="company3-logo.png" alt="Company 3" class="w-20 h-20"> */}
+                            <img className='w-40 h-40' src="https://i.ibb.co/t30947Z/download-2.jpg" alt="" />
                                 <h3 className="mt-2 text-center text-gray-800">Tesla</h3>
                         </div>
 
                         <div className="flex flex-col items-center">
                             {/* <img src="company4-logo.png" alt="Company 4" class="w-20 h-20"> */}
+                            <img className='w-40 h-40' src="https://i.ibb.co/cyDKS7g/1685279753620.png" alt="" />
                                 <h3 className="mt-2 text-center text-gray-800">Apple</h3>
                         </div>
 
                         <div className="flex flex-col items-center">
                             {/* <img src="company5-logo.png" alt="Company 5" class="w-20 h-20"> */}
+                            <img className='w-40 h-40' src="https://i.ibb.co/mCK62qx/desktop-wallpaper-nokia-logo-logo-brands-for-3d-connecting-people.jpg" alt="" />
                                 <h3 className="mt-2 text-center text-gray-800">Nokia</h3>
                         </div>
 
                         <div className="flex flex-col items-center">
                             {/* <img src="company6-logo.png" alt="Company 6" class="w-20 h-20"> */}
+                            <img className='w-40 h-40' src="https://i.ibb.co/B474gph/download-1.jpg" alt="" />
                                 <h3 className="mt-2 text-center text-gray-800">PHero</h3>
                         </div>
                     </div>
