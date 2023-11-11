@@ -18,6 +18,7 @@ import AppliedJobs from './Components/AppliedJobs.jsx';
 import AddJob from './Components/AddJob.jsx';
 import Update from './Components/Update.jsx';
 import MyJobs from './Components/MyJobs.jsx';
+import PrivateRout from './Components/PrivateRout.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,27 +46,27 @@ const router = createBrowserRouter([
       },
       {
         path:"/JobDetails/:_id",
-        element:<JobDetails></JobDetails>,
+        element:<PrivateRout><JobDetails></JobDetails></PrivateRout>,
         loader: ({params})=>fetch(`http://localhost:5000/jobs/${params._id}`)
       },
       {
         path:"/Update/:_id",
-        element:<Update></Update>,
+        element:<PrivateRout><Update></Update></PrivateRout>,
         loader: ({params})=>fetch(`http://localhost:5000/jobs/${params._id}`)
       },
       {
         path:"/Applied",
-        element:<AppliedJobs></AppliedJobs>,
+        element:<PrivateRout><AppliedJobs></AppliedJobs></PrivateRout>,
         
       },
       {
         path:"/AddJob",
-        element:<AddJob></AddJob>,
+        element:<PrivateRout><AddJob></AddJob></PrivateRout>,
         
       },
       {
         path:"/MyJob",
-        element:<MyJobs></MyJobs>,
+        element:<PrivateRout><MyJobs></MyJobs></PrivateRout>,
         
       },
     ],

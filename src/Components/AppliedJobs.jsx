@@ -2,28 +2,27 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./AuthProvider";
 import Pdf from "./PDF";
 import { PDFDownloadLink } from "@react-pdf/renderer";
+import { FaFileDownload} from 'react-icons/fa';
 
 
 const AppliedJobs = () => {
-    const {user} = useContext(AuthContext)
+    const {user ,loading} = useContext(AuthContext)
     const [Applies, setApply] = useState([]);
     const [category,setCategory]= useState('')
-    
-   const url =`http://localhost:5000/apply?email=${user?.email}&jobCategory=${category}`
- 
-    
-  
-    
-    
+
+   const url =`http://localhost:5000/apply?email=${user?.email}&jobCategory=${category}` 
     useEffect(()=>{
-        fetch(url)
+        fetch(url,{credentials:'include'})
         .then(res => res.json())
         .then(data => {setApply(data);
             
             
         })
     },[url])
-   
+    
+    if(loading){
+        return <h1> loading</h1>
+      }
     const handleFilter = e =>{
         e.preventDefault();
         
@@ -74,9 +73,9 @@ const AppliedJobs = () => {
                                     <td>{apply.salaryRange}</td>
                                     <td>{apply.jobPostingDate}</td>
                                     <td>{apply.applicationDeadline}</td>
-                                    <td>
+                                    <td >
                                         
-                                        <PDFDownloadLink document={<Pdf loggedInUserEmail={apply.loggedInUserEmail}
+                                        <PDFDownloadLink  document={<Pdf loggedInUserEmail={apply.loggedInUserEmail}
                                         jobTitle={apply.jobTitle} jobCategory= {apply.jobCategory}
                                         salaryRange={apply.salaryRange} jobPostingDate={apply.jobPostingDate}
                                         applicationDeadline={apply.applicationDeadline}
@@ -84,7 +83,7 @@ const AppliedJobs = () => {
                                         pictureUrl={apply.pictureUrl}
                                         />} fileName="details"
                                         
-                                        ><button className="btn">download</button></PDFDownloadLink>
+                                        ><button data-tip="download pdf" className="btn tooltip "><FaFileDownload></FaFileDownload></button></PDFDownloadLink>
                                         </td>
                                     
                                 </tr>)

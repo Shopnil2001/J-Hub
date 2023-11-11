@@ -3,18 +3,23 @@ import { AuthContext } from './AuthProvider';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
+import { GrDocumentUpdate } from 'react-icons/gr';
+import {  RiDeleteBin6Line } from 'react-icons/ri';
 
 const MyJobs = () => {
-    const {user} = useContext(AuthContext)
+    const {user,loading} = useContext(AuthContext)
     const [MyJobs, setMyJobs] =useState([])
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/jobs?loggedInUserEmail=${user?.email}`)
+        fetch(`http://localhost:5000/jobs?loggedInUserEmail=${user?.email}`,{credentials:'include'})
         .then(res => res.json())
         .then(data => {setMyJobs(data);
             
         })
     },[user?.email])
+    if(loading){
+        return <div className='text-center  text-red-500'><h1>loading...</h1></div>
+    }
     if(MyJobs.length<1){
         return <div className='text-center text-2xl font-bold text-red-500'><h1>No job Posted yet</h1></div>
     }
@@ -71,8 +76,8 @@ const MyJobs = () => {
                         
 
                         <div className="card-actions justify-end">
-                           <button onClick={()=>handleDelete(job._id)} className="btn ">Delete</button>
-                            <Link to={`/Update/${job._id}`}><button className="btn btn-error">Update</button></Link>
+                           <button  onClick={()=>handleDelete(job._id)} className="btn tooltip " data-tip="delete"><RiDeleteBin6Line></RiDeleteBin6Line></button>
+                            <Link to={`/Update/${job._id}`}><button className="btn  tooltip" data-tip="Update"><GrDocumentUpdate></GrDocumentUpdate></button></Link>
                         </div>
                     </div>
 

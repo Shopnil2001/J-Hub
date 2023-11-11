@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const TabCards = (category) => {
     const [Jobs, setJobs] = useState([]);
-    console.log(category);
     useEffect(()=>{
         fetch(`http://localhost:5000/jobs?jobCategory=${category.category}`)
         .then(res => res.json())
@@ -13,9 +12,6 @@ const TabCards = (category) => {
     if(Jobs.length==0){
         return <div><h1 >No job available</h1></div>
     }
-    
-
-   
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-3'>
             {
