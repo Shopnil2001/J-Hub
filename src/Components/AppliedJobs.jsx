@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./AuthProvider";
+import Pdf from "./PDF";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 
 
 const AppliedJobs = () => {
@@ -58,6 +60,7 @@ const AppliedJobs = () => {
                                 <th>Salary</th>
                                 <th>Post date</th>
                                 <th>Deadline</th>
+                                <th>PDF</th>
                                 
                             </tr>
                         </thead>
@@ -71,6 +74,18 @@ const AppliedJobs = () => {
                                     <td>{apply.salaryRange}</td>
                                     <td>{apply.jobPostingDate}</td>
                                     <td>{apply.applicationDeadline}</td>
+                                    <td>
+                                        
+                                        <PDFDownloadLink document={<Pdf loggedInUserEmail={apply.loggedInUserEmail}
+                                        jobTitle={apply.jobTitle} jobCategory= {apply.jobCategory}
+                                        salaryRange={apply.salaryRange} jobPostingDate={apply.jobPostingDate}
+                                        applicationDeadline={apply.applicationDeadline}
+                                        jobDescription={apply.jobDescription}
+                                        pictureUrl={apply.pictureUrl}
+                                        />} fileName="details"
+                                        
+                                        ><button className="btn">download</button></PDFDownloadLink>
+                                        </td>
                                     
                                 </tr>)
                             }
