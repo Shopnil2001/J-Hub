@@ -19,6 +19,7 @@ import AddJob from './Components/AddJob.jsx';
 import Update from './Components/Update.jsx';
 import MyJobs from './Components/MyJobs.jsx';
 import PrivateRout from './Components/PrivateRout.jsx';
+import Blog from './Components/Blog.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,17 +43,17 @@ const router = createBrowserRouter([
       {
         path:"/AllJob",
         element:<AllJobs></AllJobs>,
-        loader: ()=>fetch(' http://localhost:5000/jobs')
+        loader: ()=>fetch(' https://assignment-11-server-mu-six.vercel.app/jobs')
       },
       {
         path:"/JobDetails/:_id",
         element:<PrivateRout><JobDetails></JobDetails></PrivateRout>,
-        loader: ({params})=>fetch(`http://localhost:5000/jobs/${params._id}`)
+        loader: ({params})=>fetch(`https://assignment-11-server-mu-six.vercel.app/jobs/${params._id}`)
       },
       {
         path:"/Update/:_id",
         element:<PrivateRout><Update></Update></PrivateRout>,
-        loader: ({params})=>fetch(`http://localhost:5000/jobs/${params._id}`)
+        loader: ({params})=>fetch(`https://assignment-11-server-mu-six.vercel.app/jobs/${params._id}`)
       },
       {
         path:"/Applied",
@@ -69,6 +70,11 @@ const router = createBrowserRouter([
         element:<PrivateRout><MyJobs></MyJobs></PrivateRout>,
         
       },
+      {
+        path:"/Blog",
+        element:<Blog></Blog>,
+        
+      }
     ],
   },
 ]);

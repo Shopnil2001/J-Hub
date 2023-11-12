@@ -11,7 +11,7 @@ const MyJobs = () => {
     const [MyJobs, setMyJobs] =useState([])
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/jobs?loggedInUserEmail=${user?.email}`,{credentials:'include'})
+        fetch(`https://assignment-11-server-mu-six.vercel.app/jobs?loggedInUserEmail=${user?.email}`,{credentials:'include'})
         .then(res => res.json())
         .then(data => {setMyJobs(data);
             
@@ -35,7 +35,7 @@ const MyJobs = () => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(`http://localhost:5000/jobs/${_id}`,{
+            fetch(`https://assignment-11-server-mu-six.vercel.app/jobs/${_id}`,{
                 method: 'DELETE'
             })
             .then(res=> res.json())

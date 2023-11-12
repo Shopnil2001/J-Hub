@@ -24,7 +24,7 @@ const AddJob = () => {
         const jobApplicantsNumber= 0;
         
         const newJob = {jobTitle, pictureUrl,salaryRange,jobDescription,jobCategory,loggedInUserEmail,applicationDeadline,jobPostingDate,jobApplicantsNumber }
-        fetch('http://localhost:5000/jobs', {
+        fetch('https://assignment-11-server-mu-six.vercel.app/jobs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

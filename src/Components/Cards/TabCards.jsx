@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const TabCards = (category) => {
     const [Jobs, setJobs] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/jobs?jobCategory=${category.category}`)
+        fetch(`https://assignment-11-server-mu-six.vercel.app/jobs?jobCategory=${category.category}`)
         .then(res => res.json())
         .then(data => setJobs(data))
     },[category])

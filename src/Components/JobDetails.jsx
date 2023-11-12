@@ -32,7 +32,7 @@ const JobDetails = () => {
         const jobPostingDate  = job.jobPostingDate;
         const Applicant = { email, name, resume,jobPostingDate,jobTitle,pictureUrl,salaryRange,jobDescription,jobCategory,loggedInUserEmail,applicationDeadline }
         console.log(Applicant);
-        fetch(' http://localhost:5000/apply', {
+        fetch(' https://assignment-11-server-mu-six.vercel.app/apply', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -58,7 +58,7 @@ const JobDetails = () => {
             
             const updated = {jobTitle, pictureUrl,salaryRange,jobDescription,jobCategory,loggedInUserEmail,applicationDeadline,jobPostingDate,jobApplicantsNumber }
 
-            fetch(`http://localhost:5000/jobs/${job._id}`,{
+            fetch(`https://assignment-11-server-mu-six.vercel.app/jobs/${job._id}`,{
             method:'PUT',
             headers:{
                 'content-type': 'application/json'

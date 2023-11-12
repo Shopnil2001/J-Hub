@@ -10,7 +10,7 @@ const AppliedJobs = () => {
     const [Applies, setApply] = useState([]);
     const [category,setCategory]= useState('')
 
-   const url =`http://localhost:5000/apply?email=${user?.email}&jobCategory=${category}` 
+   const url =`https://assignment-11-server-mu-six.vercel.app/apply?email=${user?.email}&jobCategory=${category}` 
     useEffect(()=>{
         fetch(url,{credentials:'include'})
         .then(res => res.json())
